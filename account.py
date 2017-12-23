@@ -8,22 +8,22 @@ from pyfiglet import Figlet
 #     os.system(command)
 
 def create(account):
-	x = input("Add to existing accounts? (y/n) ")
-	if x == "y":
-		try:
-			lastId = int(account['lastId']) + 1
-			cprint("{} accounts already loaded!\n".format(account['lastId']),"blue")
-		except:
-			cprint("No accounts in json","red")
-			lastId = 1
-	else:
+	try:
+		lastId = int(account['lastId']) + 1
+		cprint("{} accounts already loaded!\n".format(account['lastId']),"blue")
+	except:
 		lastId = 1
 
 	end = False
 	while not end:
 		tempDict = {}
-		tempDict['name'] = input("Enter name (first last): ")
+		tempDict['first'] = input("Enter first name (first): ")
+		tempDict['last'] = input("Enter last name (last): ")
 		tempDict['address'] = input("Enter address (123 main st): ")
+		tempDict['city'] = input("Enter city (dc): ")
+		tempDict['zip'] = input("Enter zip (12345): ")
+		tempDict['phone'] = input("Enter phone (1231231234): ")
+		tempDict['email'] = input("Enter address (som@some.com): ")
 		tempDict['card'] = input("Enter credit card (1234123412341234): ")
 		tempDict['cvv'] = input("Enter cvv (123): ")
 		tempDict['date'] = input("Enter exp date (11/11): ")
@@ -53,15 +53,39 @@ def load(account):
 			cprint("\nID: {} loaded\n".format(str(count)),"yellow")
 
 
-			x = input("Press enter to copy name to clipboard")
-			cprint("{}\n".format(currentAccount['name']),"green")
-			pyperclip.copy(currentAccount['name'])
+			x = input("Press enter to copy first name to clipboard")
+			cprint("{}\n".format(currentAccount['first']),"green")
+			pyperclip.copy(currentAccount['first'])
 			spam = pyperclip.paste()
 
+			x = input("Press enter to copy last name to clipboard")
+			cprint("{}\n".format(currentAccount['last']),"green")
+			pyperclip.copy(currentAccount['last'])
+			spam = pyperclip.paste()
 
 			x = input("Press enter to copy address to clipboard")
 			cprint("{}\n".format(currentAccount['address']),"green")
 			pyperclip.copy(currentAccount['address'])
+			spam = pyperclip.paste()
+
+			x = input("Press enter to copy city to clipboard")
+			cprint("{}\n".format(currentAccount['city']),"green")
+			pyperclip.copy(currentAccount['city'])
+			spam = pyperclip.paste()
+
+			x = input("Press enter to copy zip to clipboard")
+			cprint("{}\n".format(currentAccount['zip']),"green")
+			pyperclip.copy(currentAccount['zip'])
+			spam = pyperclip.paste()
+
+			x = input("Press enter to copy phone to clipboard")
+			cprint("{}\n".format(currentAccount['phone']),"green")
+			pyperclip.copy(currentAccount['phone'])
+			spam = pyperclip.paste()
+
+			x = input("Press enter to copy email to clipboard")
+			cprint("{}\n".format(currentAccount['email']),"green")
+			pyperclip.copy(currentAccount['email'])
 			spam = pyperclip.paste()
 
 
@@ -76,6 +100,9 @@ def load(account):
 			spam = pyperclip.paste()
 
 			currentAccount['used'] = True
+
+			order = input("Enter order num: (or press enter) ")
+			currentAccount['orderNum'] = order
 		except:
 			cprint("REACHED END!","red",attrs=['bold'])
 			end = True
@@ -103,11 +130,11 @@ def main():
 	name = input("\nEnter exisiting user or create a new one: ")
 	try: 
 		account = masterAccount[name]
+		cr = input("1 - create\n2 - load\nchoose one: ")
 	except:
 		cprint("No {} found, creating new user {}".format(name,name),"yellow")
 		account = {}
- 
-	cr = input("1 - create\n2 - load\nchoose one: ")
+		cr = "1"
 
 	if cr == "1":
 		account = create(account)
