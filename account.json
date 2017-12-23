@@ -3,69 +3,17 @@
         "1": {
             "address": "123 main st",
             "card": "1234123412341234",
+            "city": "123 main st",
             "cvv": "123",
             "date": "11/11",
-            "name": "Seymour Vandunk",
+            "email": "123 main st",
+            "first": "Seymour",
+            "last": "Vandunk",
             "orderNum": "AD0123123123",
-            "used": false
+            "phone": "123 main st",
+            "used": true,
+            "zip": "123 main st"
         },
-        "2": {
-            "address": "123 main st",
-            "card": "1234123412341234",
-            "cvv": "123",
-            "date": "11/11",
-            "name": "Enoch Crow",
-            "orderNum": "AD0123123123",
-            "used": false
-        },
-        "3": {
-            "address": "123 main st",
-            "card": "1234123412341234",
-            "cvv": "123",
-            "date": "11/11",
-            "name": "Melani Hutchingson",
-            "orderNum": "AD0123123123",
-            "used": false
-        },
-        "4": {
-            "address": "123 main st",
-            "card": "1234123412341234",
-            "cvv": "123",
-            "date": "11/11",
-            "name": "Louetta Mang",
-            "orderNum": "AD0123123123",
-            "used": false
-        },
-        "lastId": "4"
-    },
-    "josh": {
-        "1": {
-            "address": "jose",
-            "card": "loo",
-            "cvv": "lol",
-            "date": "jj",
-            "name": "no way",
-            "orderNum": "",
-            "used": true
-        },
-        "2": {
-            "address": "no",
-            "card": "no",
-            "cvv": "no",
-            "date": "no",
-            "name": "no",
-            "orderNum": "",
-            "used": true
-        },
-        "3": {
-            "address": "sdf",
-            "card": "sdf",
-            "cvv": "sdf",
-            "date": "sd",
-            "name": "sdfl",
-            "orderNum": "",
-            "used": true
-        },
-        "lastId": "3"
+        "lastId": "1"
     }
 }
